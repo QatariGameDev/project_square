@@ -13,3 +13,7 @@ func switch_to_next_level():
 		get_tree().change_scene_to_packed(loaded_packed_scene)
 	else:
 		printerr("wrong scene path")
+		
+func player_has_won():
+	#placeholder, when player won you can add the logic here
+	print("player won")
