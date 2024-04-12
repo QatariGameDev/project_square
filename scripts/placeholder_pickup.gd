@@ -1,14 +1,16 @@
 extends Area2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-    # Add this node to a group defined in Autoload (GroupNames)
+    #hint Autoload (GroupNames)
     add_to_group(GroupNames.PickupGroup)
-    # Connect the 'collected' signal to the 'check_if_win' method of the current scene's script
     var scene = get_tree().current_scene
     if scene.has_method("check_if_win"):
-        connect("collected", Callable(scene, "check_if_win"))
-    else:
-        push_error("The current scene does not have a method named 'check_if_win'.")
+        connect("body_entered", Callable(scene, "check_if_win"))
         
+        
+func _on_body_entered(body):
+    if body.is_in_group(GroupNames.PlayerGroup):
+        emit_signal("body_entered")
+        call_deferred("queue_free")
+

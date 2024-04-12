@@ -6,7 +6,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	#Check GroupNames in Autoload
+	#hint Autoload (GroupNames)
 	add_to_group(GroupNames.PlayerGroup)
 
 func _physics_process(delta):
