@@ -5,7 +5,13 @@ extends Node
 @onready var loaded_packed_scene = load(next_level_path)
 
 func _ready():
-	switch_to_next_level()
+	get_total_pickups()
+	
+func get_total_pickups():
+	var pickup_nodes = get_tree().get_nodes_in_group(GroupNames.PickupGroup)
+	var _total = pickup_nodes.size()
+	print(_total)
+
 
 func switch_to_next_level():
 	if loaded_packed_scene is PackedScene:

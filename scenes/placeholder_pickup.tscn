@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dveln1ndcvsdy"]
+
+[ext_resource type="Script" path="res://scripts/placeholder_pickup.gd" id="1_31af1"]
+[ext_resource type="Texture2D" uid="uid://bse10pnr0kar8" path="res://scenes/playground/sprites/Tile.png" id="2_qf0gd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iiglu"]
+
+[node name="Pickup" type="Area2D"]
+script = ExtResource("1_31af1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iiglu")
+
+[node name="Tile" type="Sprite2D" parent="."]
+modulate = Color(0.92549, 1, 0.156863, 1)
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("2_qf0gd")

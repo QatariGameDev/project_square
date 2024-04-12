@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqy3tv8mraoxr"]
+[gd_scene load_steps=7 format=3 uid="uid://dqy3tv8mraoxr"]
 
 [ext_resource type="Texture2D" uid="uid://bse10pnr0kar8" path="res://scenes/playground/sprites/Tile.png" id="1_jikan"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_nujle"]
 [ext_resource type="PackedScene" uid="uid://nsil50a8st3v" path="res://scenes/player/player.tscn" id="2_xome1"]
+[ext_resource type="PackedScene" uid="uid://dveln1ndcvsdy" path="res://scenes/placeholder_pickup.tscn" id="4_jcajj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rq7g8"]
 texture = ExtResource("1_jikan")
@@ -26,6 +28,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rq7g8")
 
 [node name="Qgd_Playground" type="Node2D"]
+script = ExtResource("1_nujle")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cbmt3")
@@ -35,3 +38,7 @@ layer_0/tile_data = PackedInt32Array(524288, 0, 0, 458752, 0, 0, 393216, 0, 0, 4
 
 [node name="Player" parent="." instance=ExtResource("2_xome1")]
 position = Vector2(229, 136)
+
+[node name="Collections" type="Node2D" parent="."]
+
+[node name="Area2D" parent="Collections" instance=ExtResource("4_jcajj")]
