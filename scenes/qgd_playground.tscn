@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bse10pnr0kar8" path="res://scenes/playground/sprites/Tile.png" id="1_jikan"]
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_nujle"]
 [ext_resource type="PackedScene" uid="uid://nsil50a8st3v" path="res://scenes/player/player.tscn" id="2_xome1"]
-[ext_resource type="PackedScene" uid="uid://dveln1ndcvsdy" path="res://scenes/placeholder_pickup.tscn" id="4_jcajj"]
+[ext_resource type="PackedScene" uid="uid://blxsmv0ufisq" path="res://scenes/circle.tscn" id="4_ahc4v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kh4f"]
 texture = ExtResource("1_jikan")
@@ -33,20 +33,20 @@ position = Vector2(229, 136)
 
 [node name="Collections" type="Node2D" parent="."]
 
-[node name="Pickup" parent="Collections" instance=ExtResource("4_jcajj")]
+[node name="Circle" parent="Collections" instance=ExtResource("4_ahc4v")]
 position = Vector2(109, 315)
 
-[node name="Pickup2" parent="Collections" instance=ExtResource("4_jcajj")]
-position = Vector2(740, 458)
+[node name="Circle2" parent="Collections" instance=ExtResource("4_ahc4v")]
+position = Vector2(740, 464)
 
-[node name="Pickup3" parent="Collections" instance=ExtResource("4_jcajj")]
-position = Vector2(1087, 303)
+[node name="Circle3" parent="Collections" instance=ExtResource("4_ahc4v")]
+position = Vector2(1087, 301)
 
-[node name="Pickup4" parent="Collections" instance=ExtResource("4_jcajj")]
-position = Vector2(609, 68)
+[node name="Circle4" parent="Collections" instance=ExtResource("4_ahc4v")]
+position = Vector2(609, 64)
 
-[node name="Pickup5" parent="Collections" instance=ExtResource("4_jcajj")]
-position = Vector2(607, 291)
+[node name="Circle5" parent="Collections" instance=ExtResource("4_ahc4v")]
+position = Vector2(609, 288)
 
-[node name="Pickup6" parent="Collections" instance=ExtResource("4_jcajj")]
-position = Vector2(732, 583)
+[node name="Circle6" parent="Collections" instance=ExtResource("4_ahc4v")]
+position = Vector2(732, 584)
