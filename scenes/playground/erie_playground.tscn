@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2jhxhl70kw5n"]
+[gd_scene load_steps=7 format=3 uid="uid://c2jhxhl70kw5n"]
 
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_it7xp"]
 [ext_resource type="Texture2D" uid="uid://bse10pnr0kar8" path="res://scenes/playground/sprites/Tile.png" id="1_t0ibr"]
 [ext_resource type="PackedScene" uid="uid://nsil50a8st3v" path="res://scenes/player/player.tscn" id="2_s16gj"]
+[ext_resource type="PackedScene" uid="uid://blxsmv0ufisq" path="res://scenes/circle.tscn" id="4_4wliy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yj1ge"]
 texture = ExtResource("1_t0ibr")
@@ -18,6 +20,8 @@ physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_yj1ge")
 
 [node name="EriePlayground" type="Node2D"]
+script = ExtResource("1_it7xp")
+next_level_path = "res://scenes/qgd_playground.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6imvr")
@@ -26,3 +30,23 @@ layer_0/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608,
 
 [node name="Player" parent="." instance=ExtResource("2_s16gj")]
 position = Vector2(760, 432)
+
+[node name="Collections" type="Node2D" parent="."]
+
+[node name="Circle" parent="Collections" instance=ExtResource("4_4wliy")]
+position = Vector2(1072, 232)
+
+[node name="Circle2" parent="Collections" instance=ExtResource("4_4wliy")]
+position = Vector2(984, 232)
+
+[node name="Circle3" parent="Collections" instance=ExtResource("4_4wliy")]
+position = Vector2(664, 416)
+
+[node name="Circle4" parent="Collections" instance=ExtResource("4_4wliy")]
+position = Vector2(448, 480)
+
+[node name="Circle5" parent="Collections" instance=ExtResource("4_4wliy")]
+position = Vector2(256, 510)
+
+[node name="Circle6" parent="Collections" instance=ExtResource("4_4wliy")]
+position = Vector2(88, 576)
