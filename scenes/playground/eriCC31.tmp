@@ -24,8 +24,6 @@ sources/1 = SubResource("TileSetAtlasSource_yj1ge")
 script = ExtResource("1_it7xp")
 next_level_path = "res://scenes/qgd_playground.tscn"
 
-[node name="HUD" parent="." instance=ExtResource("5_2ek0u")]
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6imvr")
 format = 2
@@ -53,3 +51,5 @@ position = Vector2(256, 510)
 
 [node name="Circle6" parent="Collections" instance=ExtResource("4_4wliy")]
 position = Vector2(88, 576)
+
+[node name="HUD" parent="." instance=ExtResource("5_2ek0u")]
