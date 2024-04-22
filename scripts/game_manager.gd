@@ -6,7 +6,7 @@ const LEVELS_PATH = "res://levels/"
 const FINAL_LEVEL = "res://scenes/title_screen.tscn"
 enum GameModes { NORMAL, HARD }  # Define enum
 
-# Variables for current state
+# Vars
 var player_life = DEFAULT_LIVES
 var current_game_mode = GameModes.NORMAL
 var level_files = []
@@ -14,7 +14,7 @@ var current_level_index : int = 0
 var total_levels : int = 0
 
 func _ready():
-	discover_levels()  # Load all levels at startup
+	discover_levels()  
 
 func discover_levels():
 	var dir := DirAccess.open(LEVELS_PATH)
@@ -25,8 +25,8 @@ func discover_levels():
 			if filename.ends_with(".tscn"):
 				level_files.append(LEVELS_PATH + filename)
 			filename = dir.get_next()
-		level_files.sort()  # Ensure the files are in order
-		total_levels = level_files.size()  # Store the total number of levels
+		level_files.sort() 
+		total_levels = level_files.size()  
 		dir.list_dir_end()
 	else:
 		print("Failed to open directory at: ", LEVELS_PATH)
@@ -81,4 +81,4 @@ func game_over() -> void:
 func reset_game() -> void:
 	player_life = DEFAULT_LIVES
 	set_game_mode(GameModes.NORMAL)
-	current_level_index = 0  # Reset to first level
+	current_level_index = 0  
