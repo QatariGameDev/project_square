@@ -27,8 +27,8 @@ func check_if_win():
 		switch_to_next_level()
 
 func switch_to_next_level():
-	if loaded_packed_scene is PackedScene:
-		print("attemp to load " + str(next_level_path))
-		get_tree().change_scene_to_packed(loaded_packed_scene)
-	else:
-		printerr("wrong scene path")
+	var next_level_path = GameManager.get_next_level_path()
+	print("Switching to next level: ", next_level_path)
+	AudioManager.play_global_success_sound()
+	get_tree().change_scene_to_file(next_level_path)
+	GameManager.advance_level()  # Update GameManager's current level index

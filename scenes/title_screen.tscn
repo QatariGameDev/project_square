@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://dww4oqiivqoq8"]
+
+[ext_resource type="Script" path="res://scenes/title_screen.gd" id="1_jbjmh"]
+
+[sub_resource type="FontVariation" id="FontVariation_bw8w7"]
+
+[sub_resource type="SystemFont" id="SystemFont_jv65u"]
+
+[sub_resource type="FontVariation" id="FontVariation_p85e2"]
+base_font = SubResource("SystemFont_jv65u")
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jbjmh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_bw8w7")
+theme_override_font_sizes/font_size = 64
+text = "
+Square"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="NormalMode" type="Button" parent="VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_p85e2")
+theme_override_font_sizes/font_size = 64
+text = "Normal Mode"
+icon_alignment = 1
+
+[node name="HardMode" type="Button" parent="VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_p85e2")
+theme_override_font_sizes/font_size = 64
+text = "Hard Mode"
+icon_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/CenterContainer/VBoxContainer/NormalMode" to="." method="_on_normal_mode_pressed"]
+[connection signal="pressed" from="VBoxContainer/CenterContainer/VBoxContainer/HardMode" to="." method="_on_hard_mode_pressed"]

@@ -1,40 +1,71 @@
-[gd_scene load_steps=4 format=3 uid="uid://djw4vr4vkdomt"]
+[gd_scene load_steps=5 format=3 uid="uid://djw4vr4vkdomt"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_50uc6"]
 [ext_resource type="Texture2D" uid="uid://cty3xoaeiwwis" path="res://sprites/Circle.png" id="2_wcw7i"]
 [ext_resource type="FontFile" uid="uid://bf5oaclstfv3d" path="res://fonts/monogram.ttf" id="3_7nifm"]
+[ext_resource type="Texture2D" uid="uid://farml05f8aku" path="res://scenes/player/sprites/Square.png" id="4_qqb7h"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_50uc6")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 40.0
 offset_top = 40.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1152.0
+offset_bottom = 648.0
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/PanelContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_wcw7i")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="PickupLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer"]
+[node name="PickupLabel" type="Label" parent="VBoxContainer/MarginContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("3_7nifm")
+theme_override_font_sizes/font_size = 32
+text = "99/99"
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2/PanelContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_qqb7h")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="LifeLabel" type="Label" parent="VBoxContainer/MarginContainer2/PanelContainer/HBoxContainer"]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 6
