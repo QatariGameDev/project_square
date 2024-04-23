@@ -11,12 +11,15 @@ config_version=5
 [application]
 
 config/name="Project Square"
+run/main_scene="res://scenes/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GroupNames="*res://scripts/group_names.gd"
+AudioManager="*res://scenes/audio_manager/audio_manager.tscn"
+GameManager="*res://scripts/game_manager.gd"
 
 [input]
 

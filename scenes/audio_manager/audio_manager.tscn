@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvbax8jd17pnv"]
+
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_4nsff"]
+[ext_resource type="AudioStream" uid="uid://cqi42qc4axm6n" path="res://audio/sfx/global_button_sound.wav" id="2_dvs1x"]
+[ext_resource type="AudioStream" uid="uid://dpwxqumbk1drj" path="res://audio/sfx/jump_sound.wav" id="3_5s5hi"]
+[ext_resource type="AudioStream" uid="uid://b35ngtyx7wkwm" path="res://audio/sfx/damage_sound.wav" id="4_7f1hk"]
+[ext_resource type="AudioStream" uid="uid://d06ul7rakn1sp" path="res://audio/sfx/pickup_sound.wav" id="5_v3tu0"]
+[ext_resource type="AudioStream" uid="uid://b4fml3bn7v7s5" path="res://audio/sfx/success_sound.wav" id="6_sxk15"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_4nsff")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Audio_Global_Button" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dvs1x")
+
+[node name="Audio_Global_Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5s5hi")
+
+[node name="Audio_Global_damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7f1hk")
+
+[node name="Audio_Global_circle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_v3tu0")
+
+[node name="Audio_Global_success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_sxk15")

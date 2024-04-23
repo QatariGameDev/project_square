@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c03dpmuqifrh0"
+path="res://.godot/imported/Project Square Hard.mp3-7ce1496a24fd2c7727f7c37f35cf6314.mp3str"
+
+[deps]
+
+source_file="res://audio/bgm/Project Square Hard.mp3"
+dest_files=["res://.godot/imported/Project Square Hard.mp3-7ce1496a24fd2c7727f7c37f35cf6314.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

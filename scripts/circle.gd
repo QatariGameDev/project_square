@@ -12,6 +12,7 @@ func _ready():
 		
 func _on_body_entered(body):
 	if body.is_in_group(GroupNames.PlayerGroup):
+		AudioManager.play_global_pickup_sound()
 		emit_signal("collected")
 		call_deferred("queue_free")
 
