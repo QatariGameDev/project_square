@@ -53,6 +53,7 @@ func advance_level():
 	if current_level_index + 1 < level_files.size():
 		current_level_index += 1
 	else:
+		reset_game()
 		print("Final level reached or repeated.")
 
 func set_game_mode(mode: int) -> void:
